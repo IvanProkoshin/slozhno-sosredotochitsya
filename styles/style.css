@@ -1,12 +1,12 @@
 .page {
-  font-family: 'IBM Plex mono';
+  font-family: 'IBM Plex mono', 'Courier New', Courier, monospace;
   font-weight: normal;
   font-size: 18px;
   line-height: 130%;
 
-  color: var(--text-color);
+  color: var(--text-color, #f1b2ce);
 
-  background: fixed var(--backgound-color) var(--background-image) no-repeat center / cover;
+  background: fixed var(--backgound-color, #000028) var(--background-image) no-repeat center / cover;
 }
 
 .header {
@@ -19,7 +19,7 @@
   max-inline-size: 100vw;
   min-block-size: 100vh;
 
-  color: var(--accent-color);
+  color: var(--accent-color, #ff0070);
 }
 
 .decorated-zone {
@@ -122,6 +122,10 @@
   border: 1px solid currentColor;
 }
 
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: bold;
@@ -199,6 +203,10 @@
   text-decoration: underline;
 }
 
+.text__link:focus {
+  outline: none;
+}
+
 .text__link:focus-visible {
   outline: 1px solid currentColor;
 }
@@ -265,9 +273,6 @@
 }
 
 @media (width <= 600px) {
-  .header__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  }
 }
 
 @media (600px < width <= 900px) {
@@ -354,6 +359,7 @@
   .list-item__image {
     block-size: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
   .item1 {
@@ -491,6 +497,7 @@
   .list-item__image {
     block-size: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
   .item1 {
